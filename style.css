@@ -1,0 +1,25 @@
+p {
+  font-size: 16px;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.card {
+  background-color: rgb(187, 228, 248);
+  margin-left: 11px;
+
+}
+
+#curWeath {
+  border: black solid 1px;
+}
+
