@@ -75,15 +75,18 @@ axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=irvi
  document.getElementById('submit').addEventListener('click', event => {
   event.preventDefault()
 
+  
   let listElem = document.createElement('button')
   listElem.className = 'list-group-item item newCity'
+  listElem.id = "cityName"
   listElem.textContent = document.getElementById('search').value
   document.getElementById('list-group').append(listElem)
 
+  
   let city = document.getElementById('search').value
 
    document.getElementById('search').value = ""
- 
+   
   axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=${city}&appid=2bd9578496cb426fc00d78ee8b1ad6d0`)
     .then(res => {
 
