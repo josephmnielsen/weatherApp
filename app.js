@@ -1,10 +1,12 @@
-var d = new Date()
-let today = `${d.getMonth()}/${d.getDate()}/${d.getFullYear()}`
-let tomorrow = `${d.getMonth()}/${d.getDate() + 1}/${d.getFullYear()}`
-let dayTwo = `${d.getMonth()}/${d.getDate() + 2}/${d.getFullYear()}`
-let dayThree = `${d.getMonth()}/${d.getDate() + 3}/${d.getFullYear()}`
-let dayFour = `${d.getMonth()}/${d.getDate() + 4}/${d.getFullYear()}`
-let dayFive = `${d.getMonth()}/${d.getDate() + 5}/${d.getFullYear()}`
+
+let today = new Date().toLocaleDateString()
+var tomorrow = new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString();
+let dayTwo = new Date(new Date().setDate(new Date().getDate() + 2)).toLocaleDateString();
+let dayThree = new Date(new Date().setDate(new Date().getDate() + 3)).toLocaleDateString();
+let dayFour = new Date(new Date().setDate(new Date().getDate() + 4)).toLocaleDateString();
+let dayFive = new Date(new Date().setDate(new Date().getDate() + 5)).toLocaleDateString();
+
+
 
 axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=irvine&appid=2bd9578496cb426fc00d78ee8b1ad6d0`)
   .then(res => {
@@ -21,6 +23,8 @@ axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=irvi
     <p>Wind Speed: ${windSpeed}mph</p>
     
     `
+
+  
     document.getElementById('search').value = ""
 
 
@@ -82,11 +86,13 @@ axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=irvi
   listElem.textContent = document.getElementById('search').value
   document.getElementById('list-group').append(listElem)
 
-  
-  let city = document.getElementById('search').value
-
+  //  let lsCity = document.getElementById('search').value
+ 
+   let city = document.getElementById('search').value
+   let cityTwo = document.getElementById('cityName')
+    localStorage.setItem('city', JSON.stringify(cityTwo))
    document.getElementById('search').value = ""
-   
+
   axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=${city}&appid=2bd9578496cb426fc00d78ee8b1ad6d0`)
     .then(res => {
 
@@ -150,7 +156,6 @@ axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=irvi
 
 document.addEventListener('click', event => {
   if (event.target.classList.contains('newCity')) {
-    console.log('click')
 
     let newCityInput = event.target.textContent
     
