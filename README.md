@@ -13,9 +13,7 @@ Technologies: HTML, CSS, Bootstrap, Javascript, Axios, RESTful API
 
 ![alt screenshot](Assets/weatherSS.png)
 
-## Questions
-
-Feel free to contact me with any questions via github or email:
+## Contact
 
 GitHub:  
 
