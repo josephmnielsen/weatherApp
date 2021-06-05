@@ -1,4 +1,4 @@
-# Portfolio
+# Weather App
 
 ## Description
 This is a weather application. Users are able to search by city and are given current weather conditions as well as a 5 day forecast. 
