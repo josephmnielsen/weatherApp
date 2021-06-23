@@ -16,11 +16,12 @@ axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=irvi
     let windSpeed = Math.round(res.data.wind.speed)
 
     document.getElementById('curWeath').innerHTML = `
-    <h3>${res.data.name}</h3> <img src="http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png">
-    <p>${today}</p>
-    <p>Temperature: ${currentWeather}°F</p>
-    <p>Humidity: ${humidity}%</p>
-    <p>Wind Speed: ${windSpeed}mph</p>
+    <h5>Current weather</h5>
+    <h3>${res.data.name}</h3> <img class="img-card-top" src="http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png">
+    <p class="card-text"${today}</p>
+    <p class="card-text">Temperature: ${currentWeather}°F</p>
+    <p class="card-text">Humidity: ${humidity}%</p>
+    <p class="card-text">Wind Speed: ${windSpeed}mph</p>
     
     `
 
