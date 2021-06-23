@@ -23,7 +23,8 @@ p {
 }
 
 #curWeath {
-  border: rgb(197, 195, 195) solid 1px;
+  text-align: center;
+  /* border: rgb(197, 195, 195) solid 1px; */
   margin-bottom: 30px;
 }
 
